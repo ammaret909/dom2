@@ -13,7 +13,7 @@
   <title>Hello, world!</title>
 </head>
 
-<body>
+<body onload="onLoad()">
   <div class="container">
     <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
       <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
@@ -42,7 +42,7 @@
           data-bs-toggle="dropdown" aria-expanded="false">
           <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
         </a>
-        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+        <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
           <li><a class="dropdown-item" href="#">New project...</a></li>
           <li><a class="dropdown-item" href="#">Settings</a></li>
           <li><a class="dropdown-item" href="#">Profile</a></li>
@@ -89,29 +89,20 @@
       </div>
     </form>
   </div>
-  <div class="d-flex flex-row justify-content-center" id="output">
+  <div id="output">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">ชื่อ</th>
+          <th scope="col">รหัส</th>
+          <th scope="col">เพศ</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+      </tbody>
+    </table>
   </div>
-
-  <!-- <div class="output">
-    <div class="row">
-        <div class="col-1 offset-1">
-          ชื่อ
-        </div>
-        <div class="col">
-          สมชาย
-        </div>
-    </div>
-
-      <div class="row">
-        <div class="col-1 offset-1">รหัส</div>
-        <div class="col">a@b.com</div>
-      </div>
-
-      <div class="row">
-        <div class="col-1 offset-1">เพศ</div>
-        <div class="col">หญิง</div>
-      </div>
-  </div> -->
 
   <!-- Optional JavaScript; choose one of the two! -->
 
