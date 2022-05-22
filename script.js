@@ -8,12 +8,13 @@ function addStudentToTable(index,student){
     cell.innerHTML = index
     row.appendChild(cell)
     cell = document.createElement('td')
-    cell.innerHTML = student.name
+    cell.innerHTML = `${student.name} ${student.surname}`
     row.appendChild(cell)
     cell = document.createElement('td')
     cell.appendChild(div)
     div.appendChild(image)
-    image.setAttribute('src',student.imageLink)
+    image.setAttribute('src',student.image)
+    img.height = 200
     image.classList.add('img-thumbnail')
     image.style.width = '150px'
     row.appendChild(cell)
@@ -29,12 +30,33 @@ function addStudentList(studentlist){
     }
 }
 
+function addStudentData(student){
+    let idElem = document.getElementById('id')
+    idElem.innerHTML = student.id
+    let studentIdElem = document.getElementById('studentId')
+    studentIdElem.innerHTML = student.studentId
+    let nameElem = document.getElementById('name')
+    nameElem.innerHTML = `${student.name} ${student.surname}`
+    let gpaElem = document.getElementById('gpa')
+    gpaElem.innerHTML = student.gpa
+    let profileElem = document.getElementById('image')
+    profileElem.setAttribute('src', student.image)
+}
+
 function onLoad(){
-    fetch('asset/students2.json').then(response => {
+    fetch('https://dv-student-backend-2019.appspot.com/student').then(response => {
         return response.json()
-    })
-        .then(data =>{
-            let students = data
-            addStudentList(data)
+    }).then(data => {
+            addStudentData(data)
         })
 }
+
+// function onLoad(){
+//     fetch('https://dv-student-backend-2019.appspot.com/student')
+//     fetch('asset/students2.json').then(response => {
+//         return response.json()
+//     })
+//         .then(data =>{
+//             addStudentList(data)
+//         })
+// }
